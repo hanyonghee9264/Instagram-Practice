@@ -23,7 +23,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # /posts/로 들어온 URL은 posts.urls모듈에서 처리
-    path('', include('posts.urls')),
+    path('posts/', include('posts.urls')),
+    path('media/<path:path>/',views.media_serve),
 ]
 
 # MEDIA_URL로 시작하는 URL은 static()내의 serve() 함수를 통해 처리
@@ -31,7 +32,7 @@ urlpatterns = [
 
 # 여기서 static 함수의 역할은
 # 하나의 path를 만들어서 return을 해주는 역할
-urlpatterns += static(
-    prefix=settings.MEDIA_URL,
-    document_root=settings.MEDIA_ROOT,
-)
+# urlpatterns += static(
+#     prefix=settings.MEDIA_URL,
+#     document_root=settings.MEDIA_ROOT,
+# )
