@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 
 # 이 urls모듈의 app_name에 'posts'를 사용
-# reverse또는 템플릿의 {% url %}태그에서 사 용
+# reverse또는 템플릿의 {% url %}태그에서 사용
 app_name = 'posts'
 
 urlpatterns = [
